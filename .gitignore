@@ -1,5 +1,4 @@
 # Environment variables (API keys, secrets)
-# Never commit this file!
 .env
 .env.local
 .env.*.local
