@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OCR Lens</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">OCR Engine Research</p>
+        <h1>Compare different OCR engines — On-Device vs Cloud-Based</h1>
+        <p class="subtitle">
+          Upload a file or snap a photo. Test how different OCR services perform 
+          and choose what works best for your use case.
+        </p>
+      </section>
+
+      <section class="workspace">
+        <div class="panel controls">
+          <div class="control-group">
+            <label for="imageInput">Choose an image</label>
+            <input
+              id="imageInput"
+              type="file"
+              accept="image/*"
+              capture="environment"
+            />
+            <p class="hint">
+              On mobile, this can open the rear camera directly.
+            </p>
+          </div>
+
+          <div class="control-group camera-actions">
+            <button id="startCameraButton" type="button">Open Camera</button>
+            <button id="stopCameraButton" type="button" disabled>
+              Close Camera
+            </button>
+            <button id="captureButton" type="button" disabled class="capture-full">Take Photo</button>
+          </div>
+
+          <div class="control-group">
+            <label>Select OCR Engine</label>
+            <div class="engine-buttons">
+              <button type="button" class="engine-btn" data-engine="tesseract">
+                Tesseract
+                <span class="engine-badge">On-Device</span>
+              </button>
+              <button type="button" class="engine-btn" data-engine="ocrspace">
+                OCR.space
+                <span class="engine-badge">Cloud</span>
+              </button>
+              <button type="button" class="engine-btn" data-engine="google">
+                Google Vision
+                <span class="engine-badge">Cloud</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="control-group" id="googleApiKeyGroup" hidden>
+            <label for="googleApiKey">Google API Key</label>
+            <input
+              id="googleApiKey"
+              type="password"
+              placeholder="Enter your own API key"
+            />
+            <p class="hint">Get free key at console.cloud.google.com (1,000/mo)</p>
+          </div>
+
+          <div class="engine-info">
+            <div class="engine-card" data-info="tesseract">
+              <h3>Tesseract.js</h3>
+              <p>Runs entirely in your browser. Images are processed locally and never leave your device — ideal for confidential documents.</p>
+            </div>
+            <div class="engine-card" data-info="ocrspace" hidden>
+              <h3>OCR.space</h3>
+              <p>Cloud-based OCR service. Images are sent to their servers for processing. Free tier available with rate limits.</p>
+            </div>
+            <div class="engine-card" data-info="google" hidden>
+              <h3>Google Vision API</h3>
+              <p>Enterprise-grade cloud OCR. Images are sent to Google servers. Higher accuracy, requires API key with billing enabled.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel viewer">
+          <div class="preview-frame">
+            <video id="cameraPreview" playsinline muted hidden></video>
+            <img id="imagePreview" alt="Selected preview" hidden />
+            <div id="emptyState" class="empty-state">
+              <p>No image selected yet.</p>
+            </div>
+          </div>
+          <canvas id="captureCanvas" hidden></canvas>
+        </div>
+
+        <div class="panel output">
+          <div class="output-header">
+            <h2>Extracted text</h2>
+            <button id="copyButton" type="button" disabled>Copy Text</button>
+          </div>
+          <textarea
+            id="resultText"
+            placeholder="OCR output will appear here..."
+            spellcheck="false"
+          ></textarea>
+          <div class="status-card">
+            <p class="status-label">Recognition status</p>
+            <p id="statusText" class="status-text">Waiting for an image.</p>
+            <div class="progress-track" aria-hidden="true">
+              <div id="progressBar" class="progress-bar"></div>
+            </div>
+            <div class="meta">
+              <span>Confidence</span>
+              <strong id="confidenceText">-</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
