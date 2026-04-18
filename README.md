@@ -6,6 +6,10 @@ OCR Lens is a static web app that extracts text from images in the browser. It l
 - **OCR.space** — Cloud-based, uses included API key
 - **Google Vision** — Enterprise-grade, requires your own API key
 
+## Live Demo
+
+**https://vermashaurya.github.io/ocr-lens/**
+
 ## Features
 
 - Image upload via file picker
@@ -48,3 +52,16 @@ This app is static. You can deploy the folder directly to services such as Netli
 - OCR accuracy improves with sharp, high-contrast images
 - The app uses English recognition (`eng`)
 - Tesseract.js is loaded from CDN, so the site needs internet access
+
+## Tech Stack
+
+- **HTML5** — Semantic markup
+- **CSS3** — Custom properties, grid layout, responsive design
+- **JavaScript** — Vanilla JS, no frameworks
+- **Tesseract.js** — Client-side OCR (CDN)
+- **OCR.space API** — Cloud OCR
+- **Google Vision API** — Cloud OCR
+
+## License
+
+MIT License — feel free to use, modify, and distribute.
