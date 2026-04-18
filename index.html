@@ -27,6 +27,40 @@
 
       <section class="workspace">
         <div class="panel controls">
+
+          <div class="control-group">
+            <label>Select OCR Engine</label>
+            <div class="engine-buttons">
+              <button type="button" class="engine-btn" data-engine="ocrspace">
+                OCR.space
+                <span class="engine-badge">Cloud</span>
+              </button>
+              <button type="button" class="engine-btn" data-engine="tesseract">
+                Tesseract
+                <span class="engine-badge">On-Device</span>
+              </button>
+              <button type="button" class="engine-btn" data-engine="google">
+                Google Vision
+                <span class="engine-badge">Cloud</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="engine-info">
+            <div class="engine-card" data-info="tesseract" hidden>
+              <h3>Tesseract.js</h3>
+              <p>Runs entirely in your browser. Images are processed locally and never leave your device — ideal for confidential documents.</p>
+            </div>
+            <div class="engine-card" data-info="ocrspace" hidden>
+              <h3>OCR.space</h3>
+              <p>Cloud-based OCR service. Images are sent to their servers for processing. Free tier available with rate limits.</p>
+            </div>
+            <div class="engine-card" data-info="google" hidden>
+              <h3>Google Vision API</h3>
+              <p>Enterprise-grade cloud OCR. Images are sent to Google servers. Higher accuracy, requires API key with billing enabled.</p>
+            </div>
+          </div>
+
           <div class="control-group">
             <label for="imageInput">Choose an image</label>
             <input
@@ -48,24 +82,6 @@
             <button id="captureButton" type="button" disabled class="capture-full">Take Photo</button>
           </div>
 
-          <div class="control-group">
-            <label>Select OCR Engine</label>
-            <div class="engine-buttons">
-              <button type="button" class="engine-btn" data-engine="tesseract">
-                Tesseract
-                <span class="engine-badge">On-Device</span>
-              </button>
-              <button type="button" class="engine-btn" data-engine="ocrspace">
-                OCR.space
-                <span class="engine-badge">Cloud</span>
-              </button>
-              <button type="button" class="engine-btn" data-engine="google">
-                Google Vision
-                <span class="engine-badge">Cloud</span>
-              </button>
-            </div>
-          </div>
-
           <div class="control-group" id="googleApiKeyGroup" hidden>
             <label for="googleApiKey">Google API Key</label>
             <input
@@ -74,21 +90,6 @@
               placeholder="Enter your own API key"
             />
             <p class="hint">Get free key at console.cloud.google.com (1,000/mo)</p>
-          </div>
-
-          <div class="engine-info">
-            <div class="engine-card" data-info="tesseract">
-              <h3>Tesseract.js</h3>
-              <p>Runs entirely in your browser. Images are processed locally and never leave your device — ideal for confidential documents.</p>
-            </div>
-            <div class="engine-card" data-info="ocrspace" hidden>
-              <h3>OCR.space</h3>
-              <p>Cloud-based OCR service. Images are sent to their servers for processing. Free tier available with rate limits.</p>
-            </div>
-            <div class="engine-card" data-info="google" hidden>
-              <h3>Google Vision API</h3>
-              <p>Enterprise-grade cloud OCR. Images are sent to Google servers. Higher accuracy, requires API key with billing enabled.</p>
-            </div>
           </div>
         </div>
 

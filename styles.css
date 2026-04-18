@@ -349,6 +349,8 @@ textarea {
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(36, 22, 15, 0.1);
+  min-height: 150px;
+  margin-bottom: 15px;
 }
 
 .engine-card h3 {
