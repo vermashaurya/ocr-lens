@@ -10,6 +10,8 @@ OCR Lens is a static web app that extracts text from images in the browser. It l
 
 **https://vermashaurya.github.io/ocr-lens/**
 
+<img src="assets/preview-ocr.avif" alt="Preview Page" width="600" />
+
 ## Features
 
 - Image upload via file picker
@@ -55,13 +57,17 @@ This app is static. You can deploy the folder directly to services such as Netli
 
 ## Tech Stack
 
-- **HTML5** — Semantic markup
-- **CSS3** — Custom properties, grid layout, responsive design
-- **JavaScript** — Vanilla JS, no frameworks
 - **Tesseract.js** — Client-side OCR (CDN)
 - **OCR.space API** — Cloud OCR
 - **Google Vision API** — Cloud OCR
+- **HTML5** — Semantic markup
+- **CSS3** — Custom properties, grid layout, responsive design
+- **JavaScript** — Vanilla JS, no frameworks
 
 ## License
 
-MIT License — feel free to use, modify, and distribute.
+This project is licensed under the [MIT License](LICENSE). 
+<br><br>
+<img src="favicon.avif" alt="Logo" width="120" /> <br>
+![License](https://img.shields.io/github/license/vermashaurya/ocr-lens) <br>
+Feel free to take inspiration. <br>Happy Coding!
