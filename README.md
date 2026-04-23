@@ -66,8 +66,8 @@ This app is static. You can deploy the folder directly to services such as Netli
 
 ## License
 
-This project is licensed under the [Apache 2.0 License](LICENSE). 
+This project is licensed under the [Apache License 2.0](LICENSE). 
 <br><br>
 <img src="favicon.avif" alt="Logo" width="120" /> <br>
-
+![License](https://img.shields.io/github/license/vermashaurya/ocr-lens) <br>
 Feel free to take inspiration. <br>Happy Coding!
