@@ -10,7 +10,7 @@ OCR Lens is a static web app that extracts text from images in the browser. It l
 
 **https://vermashaurya.github.io/ocr-lens/**
 
-<img src="assets/preview-ocr.avif" alt="Preview Page" width="600" />
+<img src="preview-ocr.avif" alt="Preview Page" width="600" />
 
 ## Features
 
