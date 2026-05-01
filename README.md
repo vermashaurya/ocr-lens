@@ -1,6 +1,6 @@
 # OCR Lens
 
-OCR Lens is a static web app that extracts text from images in the browser. It lets you compare different OCR engines:
+An OCR Engine Comparison platform that extracts text from images in the browser in real time.
 
 - **Tesseract.js** — Runs entirely on-device (privacy-friendly, no server needed)
 - **OCR.space** — Cloud-based, uses included API key
